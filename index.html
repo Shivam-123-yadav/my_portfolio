@@ -6,10 +6,10 @@
 <title>Shivam Yadav — Full Stack Developer</title>
 <link rel="stylesheet" href="style.css">
 <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
   <a class="nav-logo" href="#hero">SY<span>.dev</span></a>
   <ul class="nav-links">
@@ -19,41 +19,32 @@
     <li><a href="#achievements">Achievements</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
 
-<!-- HERO -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#skills" onclick="closeMobile()">Skills</a>
+  <a href="#experience" onclick="closeMobile()">Experience</a>
+  <a href="#projects" onclick="closeMobile()">Projects</a>
+  <a href="#achievements" onclick="closeMobile()">Achievements</a>
+  <a href="#contact" onclick="closeMobile()">Contact</a>
+</div>
+
 <section id="hero">
   <div class="hero-orb"></div>
   <div class="hero-orb2"></div>
   <div class="hero-content">
     <div class="hero-tag">Available for opportunities</div>
-    <h1 class="hero-name">
-      Shivam<br>
-      <span class="line2">Yadav</span>
-    </h1>
+    <h1 class="hero-name">Shivam<span class="line2">Yadav</span></h1>
     <p class="hero-role">// <span>Full Stack Developer</span> — Python · Django · React · FastAPI</p>
-    <p class="hero-desc">
-      Building production-grade web platforms with secure payment integrations, 
-      optimized backend systems, and zero-downtime Linux deployments. 
-      Real systems. Real users. Real results.
-    </p>
+    <p class="hero-desc">Building production-grade web platforms with secure payment integrations, optimized backend systems, and zero-downtime Linux deployments. Real systems. Real users. Real results.</p>
     <div class="hero-stats">
-      <div class="stat">
-        <span class="stat-num">3+</span>
-        <span class="stat-label">Live Apps</span>
-      </div>
-      <div class="stat">
-        <span class="stat-num">500+</span>
-        <span class="stat-label">Transactions</span>
-      </div>
-      <div class="stat">
-        <span class="stat-num">99.5%</span>
-        <span class="stat-label">Uptime</span>
-      </div>
-      <div class="stat">
-        <span class="stat-num">40%</span>
-        <span class="stat-label">Perf Boost</span>
-      </div>
+      <div class="stat"><span class="stat-num">7+</span><span class="stat-label">Live Projects</span></div>
+      <div class="stat"><span class="stat-num">500+</span><span class="stat-label">Transactions</span></div>
+      <div class="stat"><span class="stat-num">99.5%</span><span class="stat-label">Uptime</span></div>
+      <div class="stat"><span class="stat-num">40%</span><span class="stat-label">Perf Boost</span></div>
     </div>
     <div class="hero-btns">
       <a href="#projects" class="btn-primary">View Projects</a>
@@ -63,7 +54,6 @@
   </div>
 </section>
 
-<!-- SKILLS -->
 <section id="skills">
   <p class="section-label">// 01 — Technical Arsenal</p>
   <h2 class="section-title">Skills &amp; <span>Stack</span></h2>
@@ -71,74 +61,41 @@
     <div class="skill-block">
       <div class="skill-cat">Backend</div>
       <div class="skill-name">Server & APIs</div>
-      <div class="skill-tags">
-        <span class="tag">Python</span>
-        <span class="tag">Django</span>
-        <span class="tag">Django REST Framework</span>
-        <span class="tag">FastAPI</span>
-      </div>
+      <div class="skill-tags"><span class="tag">Python</span><span class="tag">Django</span><span class="tag">DRF</span><span class="tag">FastAPI</span></div>
     </div>
     <div class="skill-block">
       <div class="skill-cat">Frontend</div>
       <div class="skill-name">UI & Interfaces</div>
-      <div class="skill-tags">
-        <span class="tag purple">React</span>
-        <span class="tag purple">JavaScript</span>
-        <span class="tag purple">HTML/CSS</span>
-        <span class="tag purple">Bootstrap</span>
-      </div>
+      <div class="skill-tags"><span class="tag purple">React</span><span class="tag purple">JavaScript</span><span class="tag purple">HTML/CSS</span><span class="tag purple">Bootstrap</span></div>
     </div>
     <div class="skill-block">
       <div class="skill-cat">Database</div>
       <div class="skill-name">Data & Storage</div>
-      <div class="skill-tags">
-        <span class="tag green">PostgreSQL</span>
-        <span class="tag green">SQLite</span>
-        <span class="tag green">SQL Optimization</span>
-        <span class="tag green">DB Indexing</span>
-      </div>
+      <div class="skill-tags"><span class="tag green">PostgreSQL</span><span class="tag green">MySQL</span><span class="tag green">SQLite</span><span class="tag green">SQL Optimization</span></div>
     </div>
     <div class="skill-block">
       <div class="skill-cat">DevOps</div>
       <div class="skill-name">Deploy & Infra</div>
-      <div class="skill-tags">
-        <span class="tag">Linux VPS</span>
-        <span class="tag">Nginx</span>
-        <span class="tag">Gunicorn</span>
-        <span class="tag">Docker</span>
-        <span class="tag">SSL/TLS</span>
-        <span class="tag">CI/CD</span>
-      </div>
+      <div class="skill-tags"><span class="tag">Linux VPS</span><span class="tag">Nginx</span><span class="tag">Gunicorn</span><span class="tag">Docker</span><span class="tag">SSL/TLS</span><span class="tag">CI/CD</span></div>
     </div>
     <div class="skill-block">
       <div class="skill-cat">Payments</div>
       <div class="skill-name">Payment Gateways</div>
-      <div class="skill-tags">
-        <span class="tag purple">Razorpay</span>
-        <span class="tag purple">Cashfree</span>
-        <span class="tag purple">Webhooks</span>
-      </div>
+      <div class="skill-tags"><span class="tag purple">Razorpay</span><span class="tag purple">Cashfree</span><span class="tag purple">Webhooks</span></div>
     </div>
     <div class="skill-block">
       <div class="skill-cat">Security & Auth</div>
       <div class="skill-name">Auth & Access</div>
-      <div class="skill-tags">
-        <span class="tag green">JWT Auth</span>
-        <span class="tag green">RBAC</span>
-        <span class="tag green">Secure APIs</span>
-        <span class="tag green">Postman Testing</span>
-      </div>
+      <div class="skill-tags"><span class="tag green">JWT Auth</span><span class="tag green">RBAC</span><span class="tag green">Secure APIs</span><span class="tag green">Postman</span></div>
     </div>
   </div>
 </section>
 
-<!-- EXPERIENCE -->
 <section id="experience">
   <p class="section-label">// 02 — Career Timeline</p>
   <h2 class="section-title">Work <span>Experience</span></h2>
   <div class="exp-timeline">
     <div class="exp-line"></div>
-
     <div class="exp-item">
       <div class="exp-dot"></div>
       <div class="exp-meta">
@@ -151,12 +108,11 @@
         <li>Developed responsive React UI components and optimized API consumption, reducing frontend load time by 40%.</li>
         <li>Built dynamic dashboards with real-time order status updates, inventory tracking, and automated email notifications.</li>
         <li>Implemented JWT authentication and secure API endpoints; validated thoroughly using Postman.</li>
-        <li>Deployed on Linux VPS with Nginx + Gunicorn + SSL/TLS + DNS management for a zero-downtime production environment.</li>
+        <li>Deployed on Linux VPS with Nginx + Gunicorn + SSL/TLS + DNS management for zero-downtime production environment.</li>
       </ul>
     </div>
-
     <div class="exp-item">
-      <div class="exp-dot" style="background: var(--accent2); box-shadow: 0 0 12px var(--accent2);"></div>
+      <div class="exp-dot" style="background:var(--accent2);box-shadow:0 0 12px var(--accent2)"></div>
       <div class="exp-meta">
         <div class="exp-role">Full Stack Developer Intern</div>
         <div class="exp-period">Apr 2025 — Jun 2025</div>
@@ -165,186 +121,86 @@
       <ul class="exp-list">
         <li>Built a complete Job Portal Web Application from scratch — responsive frontend UI, backend REST APIs, and scalable database architecture.</li>
         <li>Implemented user authentication, CRUD operations, advanced search filters, and file upload functionality.</li>
-        <li>Improved form submission UX, reducing submission errors by 20% across desktop and mobile devices.</li>
+        <li>Improved form submission UX, reducing errors by 20% across desktop and mobile devices.</li>
       </ul>
     </div>
-
   </div>
 </section>
 
-<!-- PROJECTS -->
 <section id="projects">
   <p class="section-label">// 03 — Live Production Work</p>
   <h2 class="section-title">Featured <span>Projects</span></h2>
   <div class="projects-grid">
-
     <div class="proj-card">
-      <div class="proj-header">
-        <div class="proj-num">01</div>
-        <a href="https://www.boseservicecenter.co.in/" target="_blank" class="proj-live">↗ Live</a>
-      </div>
+      <div class="proj-header"><div class="proj-num">01</div><a href="https://www.boseservicecenter.co.in/" target="_blank" class="proj-live">↗ Live</a></div>
       <div class="proj-body">
         <div class="proj-title">Bose Service Center<br>Booking Platform</div>
-        <div class="proj-desc">End-to-end service booking system handling real customer transactions with secure payment workflows, complete order lifecycle tracking, and 500+ bookings in Q1 — zero critical payment failures in production.</div>
-        <div class="proj-stack">
-          <span class="stack-tag">Django</span>
-          <span class="stack-tag">PostgreSQL</span>
-          <span class="stack-tag">REST API</span>
-          <span class="stack-tag">Razorpay</span>
-          <span class="stack-tag">JS</span>
-        </div>
+        <div class="proj-desc">End-to-end service booking system with secure payment workflows, order lifecycle tracking, and 500+ bookings in Q1 — zero critical payment failures in production.</div>
+        <div class="proj-stack"><span class="stack-tag">Django</span><span class="stack-tag">PostgreSQL</span><span class="stack-tag">REST API</span><span class="stack-tag">Razorpay</span><span class="stack-tag">JS</span></div>
       </div>
     </div>
-
     <div class="proj-card">
-      <div class="proj-header">
-        <div class="proj-num">02</div>
-        <a href="https://klickit.co.in/" target="_blank" class="proj-live">↗ Live</a>
-      </div>
+      <div class="proj-header"><div class="proj-num">02</div><a href="https://klickit.co.in/" target="_blank" class="proj-live">↗ Live</a></div>
       <div class="proj-body">
         <div class="proj-title">KlickIT Solutions<br>Corporate Platform</div>
-        <div class="proj-desc">Complete corporate platform with REST APIs powering multi-step service booking workflows. Modular Django architecture reduced feature deployment time by 30%. Integrated email notifications and lead management.</div>
-        <div class="proj-stack">
-          <span class="stack-tag">Django</span>
-          <span class="stack-tag">DRF</span>
-          <span class="stack-tag">PostgreSQL</span>
-          <span class="stack-tag">Bootstrap</span>
-        </div>
+        <div class="proj-desc">REST APIs powering multi-step service booking workflows. Modular Django architecture reduced deployment time by 30%. Email notifications and lead management integrated.</div>
+        <div class="proj-stack"><span class="stack-tag">Django</span><span class="stack-tag">DRF</span><span class="stack-tag">PostgreSQL</span><span class="stack-tag">Bootstrap</span></div>
       </div>
     </div>
-
     <div class="proj-card">
-      <div class="proj-header">
-        <div class="proj-num">03</div>
-        <a href="https://klickit2015.pythonanywhere.com/projects/" target="_blank" class="proj-live">↗ Live</a>
-      </div>
+      <div class="proj-header"><div class="proj-num">03</div><a href="https://klickit2015.pythonanywhere.com/projects/" target="_blank" class="proj-live">↗ Live</a></div>
       <div class="proj-body">
         <div class="proj-title">TaskMaster<br>Project Management</div>
-        <div class="proj-desc">Full-stack project management system with React frontend consuming Django REST APIs. Role-based access (Admin/Manager/Member), task assignment, real-time dashboards, file uploads, and activity tracking.</div>
-        <div class="proj-stack">
-          <span class="stack-tag">React</span>
-          <span class="stack-tag">Django REST</span>
-          <span class="stack-tag">PostgreSQL</span>
-          <span class="stack-tag">JWT</span>
-          <span class="stack-tag">RBAC</span>
-        </div>
+        <div class="proj-desc">React frontend consuming Django REST APIs. Role-based access (Admin/Manager/Member), task assignment, real-time dashboards, file uploads, and activity tracking.</div>
+        <div class="proj-stack"><span class="stack-tag">React</span><span class="stack-tag">Django REST</span><span class="stack-tag">PostgreSQL</span><span class="stack-tag">JWT</span><span class="stack-tag">RBAC</span></div>
       </div>
     </div>
-
-    <!-- Project 1 -->
-<div class="proj-card">
-  <div class="proj-header">
-    <div class="proj-num">05</div>
-    <a href="https://library-1-u3wy.onrender.com/" target="_blank" class="proj-live">↗ Live</a>
-  </div>
-  <div class="proj-body">
-    <div class="proj-title">LibraTrack<br>Library Management System</div>
-    <div class="proj-desc">
-      Smart library management system to manage books, issue/return records, and student data. 
-      Includes admin dashboard, authentication, and database management.
-    </div>
-    <div class="proj-stack">
-      <span class="stack-tag">Python</span>
-      <span class="stack-tag">Django</span>
-      <span class="stack-tag">SQLite</span>
-      <span class="stack-tag">HTML/CSS</span>
-    </div>
-  </div>
-</div>
-
-
-<!-- Project 2 -->
-<div class="proj-card">
-  <div class="proj-header">
-    <div class="proj-num">06</div>
-    <a href="https://shopsphere-r8sr.onrender.com/" target="_blank" class="proj-live">↗ Live</a>
-  </div>
-  <div class="proj-body">
-    <div class="proj-title">ShopSphere<br>Full Stack E-commerce Platform</div>
-    <div class="proj-desc">
-      Complete e-commerce web application with product listings, cart system, order management,
-      and secure user authentication.
-    </div>
-    <div class="proj-stack">
-      <span class="stack-tag">Django</span>
-      <span class="stack-tag">React</span>
-      <span class="stack-tag">PostgreSQL</span>
-      <span class="stack-tag">REST API</span>
-    </div>
-  </div>
-</div>
-
-
-<!-- Project 3 -->
-<div class="proj-card">
-  <div class="proj-header">
-    <div class="proj-num">07</div>
-    <a href="https://student-management-system-1-umm8.onrender.com/" target="_blank" class="proj-live">↗ Live</a>
-  </div>
-  <div class="proj-body">
-    <div class="proj-title">EduTrack<br>Student Management System</div>
-    <div class="proj-desc">
-      Web-based student management system for handling student records, attendance,
-      course details, and administrative operations efficiently.
-    </div>
-    <div class="proj-stack">
-      <span class="stack-tag">Python</span>
-      <span class="stack-tag">Django</span>
-      <span class="stack-tag">MySQL</span>
-      <span class="stack-tag">Bootstrap</span>
-    </div>
-  </div>
-</div>
-
     <div class="proj-card">
-      <div class="proj-header">
-        <div class="proj-num">04</div>
-        <a href="https://github.com/Shivam-123-yadav/BeatBlisss-WebApp" target="_blank" class="proj-live">↗ GitHub</a>
+      <div class="proj-header"><div class="proj-num">04</div><a href="https://library-1-u3wy.onrender.com/" target="_blank" class="proj-live">↗ Live</a></div>
+      <div class="proj-body">
+        <div class="proj-title">LibraTrack<br>Library Management</div>
+        <div class="proj-desc">Smart library management system for books, issue/return records, and student data with admin dashboard, authentication, and complete database management.</div>
+        <div class="proj-stack"><span class="stack-tag">Python</span><span class="stack-tag">Django</span><span class="stack-tag">SQLite</span><span class="stack-tag">HTML/CSS</span></div>
       </div>
+    </div>
+    <div class="proj-card">
+      <div class="proj-header"><div class="proj-num">05</div><a href="https://shopsphere-r8sr.onrender.com/" target="_blank" class="proj-live">↗ Live</a></div>
+      <div class="proj-body">
+        <div class="proj-title">ShopSphere<br>E-commerce Platform</div>
+        <div class="proj-desc">Complete e-commerce app with product listings, cart system, order management, and secure user authentication built with Django + React.</div>
+        <div class="proj-stack"><span class="stack-tag">Django</span><span class="stack-tag">React</span><span class="stack-tag">PostgreSQL</span><span class="stack-tag">REST API</span></div>
+      </div>
+    </div>
+    <div class="proj-card">
+      <div class="proj-header"><div class="proj-num">06</div><a href="https://student-management-system-1-umm8.onrender.com/" target="_blank" class="proj-live">↗ Live</a></div>
+      <div class="proj-body">
+        <div class="proj-title">EduTrack<br>Student Management</div>
+        <div class="proj-desc">Web-based student management system for student records, attendance, course details, and administrative operations.</div>
+        <div class="proj-stack"><span class="stack-tag">Python</span><span class="stack-tag">Django</span><span class="stack-tag">MySQL</span><span class="stack-tag">Bootstrap</span></div>
+      </div>
+    </div>
+    <div class="proj-card">
+      <div class="proj-header"><div class="proj-num">07</div><a href="https://github.com/Shivam-123-yadav/BeatBlisss-WebApp" target="_blank" class="proj-live">↗ GitHub</a></div>
       <div class="proj-body">
         <div class="proj-title">BeatBliss<br>Music Streaming App</div>
-        <div class="proj-desc">Full-featured music streaming web app with user authentication, playlist creation, and audio playback. PostgreSQL backend, deployed on Render with Tailwind CSS frontend.</div>
-        <div class="proj-stack">
-          <span class="stack-tag">Django</span>
-          <span class="stack-tag">PostgreSQL</span>
-          <span class="stack-tag">Tailwind</span>
-          <span class="stack-tag">JS</span>
-        </div>
+        <div class="proj-desc">Full-featured music streaming app with user authentication, playlist creation, and audio playback. PostgreSQL backend deployed on Render.</div>
+        <div class="proj-stack"><span class="stack-tag">Django</span><span class="stack-tag">PostgreSQL</span><span class="stack-tag">Tailwind</span><span class="stack-tag">JS</span></div>
       </div>
     </div>
-
   </div>
 </section>
 
-<!-- ACHIEVEMENTS -->
 <section id="achievements">
   <p class="section-label">// 04 — By the Numbers</p>
   <h2 class="section-title">Key <span>Achievements</span></h2>
   <div class="ach-grid">
-    <div class="ach-item">
-      <span class="ach-icon">🚀</span>
-      <span class="ach-val">3+</span>
-      <div class="ach-label">Production Apps Delivered</div>
-    </div>
-    <div class="ach-item">
-      <span class="ach-icon">💳</span>
-      <span class="ach-val">500+</span>
-      <div class="ach-label">Successful Transactions</div>
-    </div>
-    <div class="ach-item">
-      <span class="ach-icon">⚡</span>
-      <span class="ach-val">40%</span>
-      <div class="ach-label">Performance Improvement</div>
-    </div>
-    <div class="ach-item">
-      <span class="ach-icon">🟢</span>
-      <span class="ach-val">99.5%</span>
-      <div class="ach-label">Server Uptime</div>
-    </div>
+    <div class="ach-item"><span class="ach-icon">🚀</span><span class="ach-val">7+</span><div class="ach-label">Projects Delivered</div></div>
+    <div class="ach-item"><span class="ach-icon">💳</span><span class="ach-val">500+</span><div class="ach-label">Transactions</div></div>
+    <div class="ach-item"><span class="ach-icon">⚡</span><span class="ach-val">40%</span><div class="ach-label">Perf Improvement</div></div>
+    <div class="ach-item"><span class="ach-icon">🟢</span><span class="ach-val">99.5%</span><div class="ach-label">Server Uptime</div></div>
   </div>
 </section>
 
-<!-- EDUCATION -->
 <section id="education">
   <p class="section-label">// 05 — Academic Background</p>
   <h2 class="section-title">Education &amp; <span>Qualifications</span></h2>
@@ -364,7 +220,6 @@
   </div>
 </section>
 
-<!-- CONTACT -->
 <section id="contact">
   <p class="section-label">// 06 — Let's Connect</p>
   <h2 class="section-title">Get In <span>Touch</span></h2>
@@ -373,49 +228,24 @@
       <h3>Open to opportunities</h3>
       <p>Looking for full-time roles, freelance projects, or interesting collaborations. If you need a developer who ships real products — let's talk.</p>
       <div class="contact-links">
-        <a href="mailto:sshivamyadav272@gmail.com" class="contact-link">
-          <span class="contact-link-icon">EMAIL</span>
-          sshivamyadav272@gmail.com
-        </a>
-        <a href="tel:+918429640430" class="contact-link">
-          <span class="contact-link-icon">PHONE</span>
-          +91 84296 40430
-        </a>
-        <a href="https://www.linkedin.com/in/shivam-yadav-23b4a1317/" target="_blank" class="contact-link">
-          <span class="contact-link-icon">LINKEDIN</span>
-          shivam-yadav-23b4a1317
-        </a>
-        <a href="https://github.com/Shivam-123-yadav" target="_blank" class="contact-link">
-          <span class="contact-link-icon">GITHUB</span>
-          Shivam-123-yadav
-        </a>
-        <a href="https://my-portfolio-eta-eight-21.vercel.app/" target="_blank" class="contact-link">
-          <span class="contact-link-icon">PORTFOLIO</span>
-          my-portfolio.vercel.app
-        </a>
+        <a href="mailto:sshivamyadav272@gmail.com" class="contact-link"><span class="contact-link-icon">EMAIL</span>sshivamyadav272@gmail.com</a>
+        <a href="tel:+918429640430" class="contact-link"><span class="contact-link-icon">PHONE</span>+91 84296 40430</a>
+        <a href="https://www.linkedin.com/in/shivam-yadav-23b4a1317/" target="_blank" class="contact-link"><span class="contact-link-icon">LINKEDIN</span>shivam-yadav-23b4a1317</a>
+        <a href="https://github.com/Shivam-123-yadav" target="_blank" class="contact-link"><span class="contact-link-icon">GITHUB</span>Shivam-123-yadav</a>
+        <a href="https://my-portfolio-eta-eight-21.vercel.app/" target="_blank" class="contact-link"><span class="contact-link-icon">PORTFOLIO</span>my-portfolio.vercel.app</a>
       </div>
     </div>
     <div class="contact-right">
       <form class="contact-form" onsubmit="handleSubmit(event)">
-        <div class="form-field">
-          <label>Name</label>
-          <input type="text" placeholder="Your name" required>
-        </div>
-        <div class="form-field">
-          <label>Email</label>
-          <input type="email" placeholder="your@email.com" required>
-        </div>
-        <div class="form-field">
-          <label>Message</label>
-          <textarea placeholder="Tell me about the project or opportunity..." required></textarea>
-        </div>
+        <div class="form-field"><label>Name</label><input type="text" placeholder="Your name" required></div>
+        <div class="form-field"><label>Email</label><input type="email" placeholder="your@email.com" required></div>
+        <div class="form-field"><label>Message</label><textarea placeholder="Tell me about the project or opportunity..." required></textarea></div>
         <button type="submit" class="form-submit">Send Message →</button>
       </form>
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <p>© 2025 Shivam Yadav — Full Stack Developer · Mumbai, India</p>
   <div class="footer-links">
