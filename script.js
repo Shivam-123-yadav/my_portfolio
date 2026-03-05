@@ -1,79 +1,52 @@
- // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
 
-        // Header background change on scroll
-        window.addEventListener('scroll', function() {
-            const header = document.querySelector('header');
-            if (window.scrollY > 100) {
-                header.style.background = 'rgba(0, 0, 0, 0.9)';
-            } else {
-                header.style.background = 'rgba(255, 255, 255, 0.1)';
-            }
-        });
+  // Intersection Observer for reveal animations
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
 
-        // Form submission handler
-        function handleSubmit(event) {
-            event.preventDefault();
-            const formData = new FormData(event.target);
-            const name = formData.get('name');
-            const email = formData.get('email');
-            const message = formData.get('message');
-            
-            // Here you would typically send the data to your server
-            alert(`Thank you ${name}! Your message has been sent. I'll get back to you soon.`);
-            event.target.reset();
-        }
+  document.querySelectorAll('.exp-item, .proj-card').forEach(el => observer.observe(el));
 
-        // Add animation on scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -100px 0px'
-        };
+  // Stagger proj cards
+  document.querySelectorAll('.proj-card').forEach((card, i) => {
+    card.style.transitionDelay = `${i * 0.1}s`;
+  });
 
-        const observer = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
+  // make whole project card clickable (delegates to the small live/github link inside)
+  document.querySelectorAll('.proj-card').forEach(card => {
+    card.addEventListener('click', () => {
+      const link = card.querySelector('.proj-live');
+      if (link && link.href) {
+        window.open(link.href, '_blank');
+      }
+    });
+  });
 
-        // Observe all sections
-        document.querySelectorAll('section').forEach(section => {
-            section.style.opacity = '0';
-            section.style.transform = 'translateY(30px)';
-            section.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
-            observer.observe(section);
-        });
+  // Form submit
+  function handleSubmit(e) {
+    e.preventDefault();
+    const btn = e.target.querySelector('.form-submit');
+    btn.textContent = 'Message Sent ✓';
+    btn.style.background = 'var(--accent3)';
+    setTimeout(() => {
+      btn.textContent = 'Send Message →';
+      btn.style.background = '';
+      e.target.reset();
+    }, 3000);
+  }
 
-        // Hero section is always visible
-        document.querySelector('.hero').style.opacity = '1';
-        document.querySelector('.hero').style.transform = 'translateY(0)';
-
-        // Add typing effect to hero title
-        const heroTitle = document.querySelector('.hero h1');
-        const originalText = heroTitle.textContent;
-        heroTitle.textContent = '';
-        
-        let i = 0;
-        const typeWriter = () => {
-            if (i < originalText.length) {
-                heroTitle.textContent += originalText.charAt(i);
-                i++;
-                setTimeout(typeWriter, 100);
-            }
-        };
-        
-        setTimeout(typeWriter, 1000);
+  // Active nav highlight
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => {
+      if (window.scrollY >= s.offsetTop - 100) current = s.id;
+    });
+    navLinks.forEach(a => {
+      a.style.color = a.getAttribute('href') === '#' + current ? 'var(--accent)' : '';
+    });
+  });
